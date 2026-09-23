@@ -1,74 +1,26 @@
 # claude-document-system
 
-<!-- HMZ PORTFOLIO STANDARD -->
-> Portfolio status: active · Visibility: public · Source of truth: current repository source.
-<!-- END HMZ PORTFOLIO STANDARD -->
-
 > **Claude Document System** — 3-layer enterprise doc pipeline: doc-preflight + format masters + QA agent for PDF/DOCX/XLSX/PPTX.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/hmzainjamil/claude-document-system/main/banner.png" width="100%" />
-</p>
+<p align="center"><a href="https://github.com/hmzainjamil/claude-document-system">Repository</a> · <a href="https://github.com/hmzainjamil/claude-document-system/commits/main">Commits</a> · <a href="https://github.com/hmzainjamil/claude-document-system/issues">Issues</a></p>
+<p align="center"><img alt="Documentation" src="https://img.shields.io/badge/documentation-deep%20editorial-lightgrey"> <img alt="Lifecycle" src="https://img.shields.io/badge/lifecycle-active-success"></p>
 
-<p align="center">
-  <a href="https://github.com/hmzainjamil/claude-document-system/stargazers"><img src="https://img.shields.io/github/stars/hmzainjamil/claude-document-system?style=for-the-badge&color=FFD700&labelColor=000" alt="Stars"/></a>
-  <a href="https://github.com/hmzainjamil/claude-document-system/forks"><img src="https://img.shields.io/github/forks/hmzainjamil/claude-document-system?style=for-the-badge&color=4FC3F7&labelColor=000" alt="Forks"/></a>
-  <a href="https://github.com/hmzainjamil/claude-document-system/issues"><img src="https://img.shields.io/github/issues/hmzainjamil/claude-document-system?style=for-the-badge&color=FF6B6B&labelColor=000" alt="Issues"/></a>
-  <a href="https://github.com/hmzainjamil/claude-document-system/pulls"><img src="https://img.shields.io/github/issues-pr/hmzainjamil/claude-document-system?style=for-the-badge&color=A8E6CF&labelColor=000" alt="PRs"/></a>
-  <a href="https://github.com/hmzainjamil/claude-document-system/commits/main"><img src="https://img.shields.io/github/commit-activity/m/hmzainjamil/claude-document-system?style=for-the-badge&color=DDA0DD&labelColor=000" alt="Commits"/></a>
-  <a href="https://github.com/hmzainjamil/claude-document-system/commits/main"><img src="https://img.shields.io/github/last-commit/hmzainjamil/claude-document-system?style=for-the-badge&color=98FB98&labelColor=000" alt="Last Commit"/></a>
-</p>
+<!-- HMZ DEEP README v1 -->
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Stack-Python_%C2%B7_ReportLab_%C2%B7_python-docx_%C2%B7_openpyxl-blue?style=flat&labelColor=555" />
-  <img src="https://img.shields.io/badge/Formats-PDF%2FDOCX%2FXLSX%2FPPTX-blue?style=flat&labelColor=555" />
-  <img src="https://img.shields.io/badge/QA-Layer-3-green?style=flat&labelColor=555" />
-  <img src="https://img.shields.io/badge/Status-Active-green?style=flat&labelColor=555" />
-  <img src="https://img.shields.io/badge/License-MIT-purple?style=flat&labelColor=555" />
-</p>
+## At a glance
 
-<p align="center">
-  <a href="#why-this-exists">Why</a> ·
-  <a href="#at-a-glance">Glance</a> ·
-  <a href="#concepts">Concepts</a> ·
-  <a href="#how-it-works">How</a> ·
-  <a href="#install">Install</a> ·
-  <a href="#usage">Usage</a> ·
-  <a href="#configuration">Config</a> ·
-  <a href="#tips-and-tricks">Tips</a> ·
-  <a href="#troubleshooting">Debug</a> ·
-  <a href="#architecture">Architecture</a> ·
-  <a href="#roadmap">Roadmap</a>
-</p>
-
----
-
-## Why This Exists
-
-Generating professional documents with AI is unreliable without a quality gate. Columns overflow the page. Tables split across pages incorrectly. Charts are missing or misaligned. Math totals don't add up. Font sizes are inconsistent. The Claude Document System enforces a 3-layer guard that makes every generated document production-ready: pre-build checklist, format specialist execution, and post-build QA that actually opens and validates the output file.
-
-doc-preflight runs before any document script — it verifies format dimensions, confirms data source availability, validates column math assertions (abs(sum(COL_WIDTHS) - USABLE_W) < 1.0 enforced always), and confirms QA comment blocks are present. Nothing runs until preflight passes. Format master skills (ReportLab for PDF, python-docx for DOCX, openpyxl for XLSX, python-pptx for PPTX) execute builds with hardened templates that prevent the most common layout failures.
-
-The QA agent renders page 1 to PNG at /tmp/doc_qa_page1.png using pymupdf and validates structure programmatically. Exit 0 = PASS, Exit 1 = FAIL with specific error message. All documents save to ~/Downloads by default per HMZ policy. The doc-factory.py CLI handles the full pipeline — preflight → build → QA — with a single command. This system replaced a workflow where 30% of AI-generated documents had layout errors requiring manual fixes before client delivery.
-
----
-
-## At a Glance
-
-| | What you get |
+| Field | Current state |
 |---|---|
-| **doc-preflight** | Pre-build checklist: format/dims/data/col_math before any code runs |
-| **ReportLab PDF** | 11-page branded PDF master; client color palette extracted from URL |
-| **python-docx** | DOCX format master with heading styles and table overflow guards |
-| **openpyxl** | XLSX format master with formula validation and chart existence guards |
-| **python-pptx** | PPTX format master with slide layout and image bounds guards |
-| **QA Agent** | Post-build: opens file, validates structure, renders page 1 to PNG |
-| **doc-factory CLI** | python3 doc-factory.py --qa file.pdf; auto-detects format from extension |
-| **Column Math Assert** | abs(sum(COL_WIDTHS) - USABLE_W) < 1.0 enforced always without exception |
-| **Single DATA Dict** | All metrics from one dict with lambda derivation; no duplication |
-| **~/Downloads Default** | All generated files auto-saved to ~/Downloads per HMZ policy |
+| Repository | claude-document-system |
+| Visibility | Public |
+| Lifecycle | Active |
+| Evidence basis | Current repository documentation and source-visible material |
 
----
+## Why this exists
+
+**Claude Document System** — 3-layer enterprise doc pipeline: doc-preflight + format masters + QA agent for PDF/DOCX/XLSX/PPTX.
+
+The README is organized around the repository's documented scope. It separates implementation evidence from claims about rendering quality, performance, or external outcomes.
 
 ## 🧠 CONCEPTS
 
@@ -84,16 +36,6 @@ The QA agent renders page 1 to PNG at /tmp/doc_qa_page1.png using pymupdf and va
 | RetryLogic | `core/retry.py` | Exponential backoff + alt-provider on persistent failure |
 | StatusTracker | `core/status.py` | Per-operation metrics: latency, cost, confidence scores |
 | Scheduler | `schedule/scheduler.py` | LaunchAgent-based cron scheduling for automation |
-
-### 🔥 Hot
-
-| Feature | Location | Description |
-|---|---|---|
-| **Primary Command** | `cli.py:main()` | Single command that fires the entire pipeline end-to-end |
-| **Tier 0 Router** | `routing/tier0.py` | Cost ladder: never burns Claude quota on internal sub-tasks |
-| **Hook Integration** | `hooks/handler.py` | Auto-triggers on Claude Code SessionStart and Stop events |
-
----
 
 ## ⚙️ HOW IT WORKS
 
@@ -123,8 +65,6 @@ LogManager: persist full run record to ~/.claude/tcc-logs/
 stdout / file output / hook callback response
 ```
 
----
-
 ## 🚀 INSTALL
 
 ```bash
@@ -138,8 +78,6 @@ python setup.py verify    # confirms all provider connections live
 python setup.py hooks     # installs Claude Code SessionStart/Stop hooks
 mkdir -p ~/.claude/tcc-logs/  # create log directory
 ```
-
----
 
 ## 📟 USAGE
 
@@ -167,8 +105,6 @@ python main.py status      # show all configured providers + health
 python main.py verify      # test live connections to all providers
 ```
 
----
-
 ## ⚙️ CONFIGURATION
 
 | Variable | Default | Description |
@@ -189,274 +125,17 @@ python main.py verify      # test live connections to all providers
 | `AUTO_RETRY_ALT` | `true` | Automatically switch provider on persistent failure |
 | `OUTPUT_DIR` | `~/Downloads` | Default directory for all generated file outputs |
 
----
+## Validation and evidence
 
-## 💡 TIPS AND TRICKS (12)
-
-<a href="#tips-setup">setup</a> · <a href="#tips-routing">routing</a> · <a href="#tips-output">output</a> · <a href="#tips-integration">integration</a>
-
-<a id="tips-setup"></a>
-■ **Setup & Config (3)**
-
-| Tip | Source |
-|---|---|
-| Run `python setup.py verify` after any `.env` change — catches missing keys before runtime failures | `setup.py` |
-| Set `LOCAL_FIRST=true` — Ollama always hit first; zero API cost on warm cached prompts | `routing/tier0.py` |
-| Use `LOG_LEVEL=DEBUG` temporarily when diagnosing provider failures; always revert to INFO afterward | `.env` |
-
-<a id="tips-routing"></a>
-■ **Model Routing (3)**
-
-| Tip | Source |
-|---|---|
-| Groq handles <4K token tasks cheapest and fastest — let default routing use it for all short operations | Groq pricing docs |
-| Gemini Flash is the long-context champion — set as explicit provider for tasks with >8K context window | Google AI Studio docs |
-| DeepSeek-V3 rivals GPT-4o on code tasks at 1/10th the cost — ideal for all code generation sub-tasks | DeepSeek benchmarks |
-
-<a id="tips-output"></a>
-■ **Output Quality (3)**
-
-| Tip | Source |
-|---|---|
-| `COMPRESS_OUTPUT=true` keeps log files small; full raw outputs available in `~/.claude/tcc-logs/raw/` | `output/formatter.py` |
-| Pipe any output to `compress` skill for additional caveman-compression before downstream storage | `~/.claude/skills/compress/` |
-| Set `CONFIDENCE_THRESHOLD=0.5` for creative tasks; `0.8` for factual or code tasks requiring high accuracy | `core/confidence.py` |
-
-<a id="tips-integration"></a>
-■ **HMZ System Integration (3)**
-
-| Tip | Source |
-|---|---|
-| This repo is part of the HMZ AI System — see claude-ai-system-backup for the full dependency and config map | `CLAUDE.md` |
-| Hook integration auto-triggers on Claude Code SessionStart — verify installation: `python setup.py hooks --check` | `hooks/handler.py` |
-| All logs write to `~/.claude/tcc-logs/` — shared log directory with MAE and TCC for unified audit trail | `logs/manager.py` |
-
----
-
-## 🔧 TROUBLESHOOTING
-
-| Issue | Cause | Fix |
-|---|---|---|
-| `ConnectionRefused :11434` | Ollama not running | `ollama serve` — never kill Ollama per CLAUDE.md rule |
-| `AuthError: 401` | API key missing, expired, or wrong variable name | Re-check `.env`; run `python setup.py verify` |
-| `TimeoutError` on all providers | Network issue or all APIs overloaded simultaneously | Increase `TIMEOUT_S` to 60; check provider status pages |
-| Low confidence scores on all outputs | Prompt too vague or context missing | Add domain context to prompt; use `--verbose` to see scores |
-| Hook not triggering on session start | Hook file not installed in settings.json | Run `python setup.py hooks --install` to register hooks |
-| Log dir missing on fresh machine | First run before directory created | `mkdir -p ~/.claude/tcc-logs/` then re-run |
-| Rate limit errors on parallel calls | Too many concurrent requests to single provider | Reduce `MAX_PARALLEL`; add `RATE_LIMIT_DELAY=1` to .env |
-
----
-
-## 📊 ARCHITECTURE
-
-```
-claude-document-system/
-├── core/
-│   ├── engine.py       # Primary execution logic and orchestration
-│   ├── retry.py        # Exponential backoff + alternate provider logic
-│   └── confidence.py   # 0.0-1.0 output quality scoring gate
-├── routing/
-│   └── tier0.py        # Ollama→DeepSeek→Gemini→Groq→GPT cost ladder
-├── adapters/           # Per-provider API wrappers (55+ supported)
-│   ├── groq.py
-│   ├── gemini.py
-│   ├── deepseek.py
-│   ├── openai.py
-│   └── ollama.py
-├── output/
-│   └── formatter.py    # Caveman-compression and output formatting
-├── logs/
-│   └── manager.py      # Structured JSON log persistence layer
-├── hooks/
-│   └── handler.py      # Claude Code SessionStart/Stop integration
-├── schedule/
-│   └── scheduler.py    # LaunchAgent-based cron automation setup
-├── config/
-│   └── manager.py      # .env loading, validation, hot-reload
-├── setup.py            # Install, verify, hooks setup utility
-└── main.py             # Primary CLI entrypoint
-```
-
----
-
-## 🗺️ ROADMAP
-
-| Status | Feature |
-|---|---|
-| ✅ | Core engine with provider adapter architecture |
-| ✅ | Tier 0 multi-provider routing ladder |
-| ✅ | Hook integration for Claude Code sessions |
-| ✅ | Structured JSON audit logging |
-| ✅ | LaunchAgent scheduled automation |
-| ✅ | Caveman-compressed output formatting |
-| 🔄 | Web dashboard for operation run history |
-| 🔄 | Slack/email alerting on operation failures |
-| 📋 | Auto-learn from operation outcomes to improve routing |
-| 📋 | MCP server mode for external agent tool access |
-| 📋 | Multi-machine config sync via claude-ai-system-backup |
-| 📋 | Cost analytics dashboard with per-provider spend breakdown |
-
----
-
-## ☠️ STARTUPS / BUSINESSES
-
-| This Repo / Feature | Replaced |
-|---|---|
-| **Core automation pipeline** | Manual repetitive execution of AI workflows |
-| **Tier 0 routing ladder** | Burning expensive Claude Sonnet quota on simple sub-tasks |
-| **Hook integration** | Manual context loading and setup at start of each Claude session |
-| **Structured JSON logging** | Ad-hoc `echo` debugging with no searchable or persistent audit trail |
-| **Provider retry logic** | Manual provider switching when individual APIs experience downtime |
-| **LaunchAgent scheduler** | Calendar reminders and manual triggers for routine AI operations |
-| **Confidence gate** | Manually reviewing every AI output for quality before use |
-
----
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=hmzainjamil/claude-document-system&type=Date)](https://star-history.com/#hmzainjamil/claude-document-system&Date)
-
----
-
-## 🔬 DEEP DIVE: IMPLEMENTATION DETAILS
-
-### Provider Selection Logic
-
-The routing engine evaluates providers in strict cost order. Each provider has a `check()` method that verifies availability before the primary call:
-
-```python
-async def route(prompt: str, task_type: str) -> str:
-    for provider in TIER0_LADDER:
-        if await provider.check():
-            result = await provider.complete(prompt, task_type)
-            if result.confidence >= CONFIDENCE_THRESHOLD:
-                return result
-    raise AllProvidersFailedError("All Tier 0 providers exhausted")
-```
-
-The `task_type` parameter drives model selection within each provider:
-- `code` → deepseek-coder-v2, gpt-4o (code optimized)
-- `text` → gemini-flash-1.5, groq-llama3-8b
-- `long_context` → gemini-1.5-pro (1M ctx), kimi-moonshot (262K ctx)
-- `fast` → groq-llama3-8b (sub-100ms), gemini-flash
-
-### Confidence Scoring
-
-Every response is scored 0.0–1.0 using a combination of:
-- **Coherence**: sentence embedding cosine similarity to prompt intent
-- **Completeness**: response length vs. expected length for task type
-- **Format**: matches expected output format (JSON, code, prose)
-- **Hallucination proxy**: factual consistency check on key entities
-
-```python
-def score(prompt: str, response: str, task_type: str) -> float:
-    coherence = cosine_sim(embed(prompt), embed(response))
-    completeness = min(len(response) / EXPECTED_LEN[task_type], 1.0)
-    format_ok = validate_format(response, task_type)
-    return 0.4 * coherence + 0.3 * completeness + 0.3 * format_ok
-```
-
-### Hook Architecture
-
-Claude Code hooks fire on session lifecycle events. The handler:
-
-```json
-{
-  "hooks": {
-    "SessionStart": [{
-      "matcher": ".*",
-      "hooks": [{"type": "command", "command": "python ~/.claude/hooks/session_start.py"}]
-    }],
-    "Stop": [{
-      "matcher": ".*",
-      "hooks": [{"type": "command", "command": "python ~/.claude/hooks/session_stop.py"}]
-    }]
-  }
-}
-```
-
-`session_start.py` loads: context from MEMORY.md, active skill list, Tier 0 routing config, and yesterday's log summary.
-`session_stop.py` writes: session learnings to session-queue.jsonl, updates MEMORY.md index, compresses old logs.
-
----
-
-## 📈 PERFORMANCE BENCHMARKS
-
-Measured on MacBook Pro M2 Pro, stable network, warm Ollama (deepseek-coder:6.7b loaded):
-
-| Operation | P50 latency | P95 latency | Cost/1K tokens |
-|---|---|---|---|
-| Ollama local (7B) | 180ms | 420ms | $0.000 |
-| Groq Llama3-8b | 95ms | 210ms | $0.0001 |
-| Gemini Flash 1.5 | 320ms | 680ms | $0.000075 |
-| DeepSeek-V3 | 410ms | 890ms | $0.00028 |
-| GPT-4o-mini | 580ms | 1200ms | $0.00015 |
-| Claude Haiku | 340ms | 720ms | $0.00025 |
-| Claude Sonnet | 1100ms | 2400ms | $0.003 |
-
-Tier 0 routing cuts average cost by **87%** vs. routing everything through Claude Sonnet.
-For typical HMZ daily workload (500K tokens/day sub-tasks), monthly savings: **~$1,200/month**.
-
----
+No dedicated test or evaluation section was available in the current README.
 
 ## 🔐 SECURITY CONSIDERATIONS
 
-### API Key Management
+## Limitations
 
-All API keys stored in `.env` — never committed to git. The `.gitignore` enforces this:
-
-```
-.env
-*.key
-secrets/
-```
-
-For production deployments, use a secrets manager:
-```bash
-# Doppler (recommended)
-doppler setup
-doppler run -- python main.py "task"
-
-# AWS Secrets Manager
-aws secretsmanager get-secret-value --secret-id hmz-ai-keys | jq -r '.SecretString' > .env
-```
-
-### Network Security
-
-- All provider API calls over HTTPS/TLS 1.3
-- No credentials in logs (keys masked as `***` in all log output)
-- Rate limit headers respected; no aggressive retry that triggers IP bans
-- Ollama bound to localhost only (`127.0.0.1:11434`); never exposed to network
-
-### Data Privacy
-
-- Prompts logged locally only; never sent to third-party analytics
-- `COMPRESS_OUTPUT=true` reduces log volume; raw logs can be disabled
-- PII detection warning on prompts containing email, phone, SSN patterns
-
----
-
-## 🤝 CONTRIBUTING
-
-Contributions welcome. Before submitting a PR:
-
-1. Run `python -m pytest tests/` — all tests must pass
-2. Add tests for any new provider adapter or routing logic
-3. Update `.env.example` for any new environment variables
-4. Follow caveman coding style: no comments stating the obvious, clear variable names
-
-```bash
-# Run full test suite
-python -m pytest tests/ -v
-
-# Run only routing tests
-python -m pytest tests/test_routing.py -v
-
-# Check code style
-ruff check .
-```
-
----
+- Generated documents depend on their underlying libraries and runtime environment.
+- Quality claims should be backed by inspectable examples or tests.
+- Planned integrations are not treated as completed functionality.
 
 ## 📚 RELATED REPOS IN THE HMZ AI SYSTEM
 
@@ -469,6 +148,8 @@ ruff check .
 | [hermes-ai-system](https://github.com/hmzainjamil/hermes-ai-system) | Persistent agent + 80+ skills | Uses tier0, mcp |
 | [claude-ai-system-backup](https://github.com/hmzainjamil/claude-ai-system-backup) | System backup + restore | Backs up all |
 
-
----
 <div align="center">Built by <a href="https://github.com/hmzainjamil">HMZ</a> · Part of the <a href="https://github.com/hmzainjamil/claude-ai-system">HMZ Claude AI System</a> · Zero broken workflows</div>
+
+## Maintainer
+
+[hmzainjamil](https://github.com/hmzainjamil)
