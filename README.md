@@ -1,5 +1,9 @@
 # claude-document-system
 
+<!-- HMZ PORTFOLIO STANDARD -->
+> Portfolio status: active · Visibility: public · Source of truth: current repository source.
+<!-- END HMZ PORTFOLIO STANDARD -->
+
 > **Claude Document System** — 3-layer enterprise doc pipeline: doc-preflight + format masters + QA agent for PDF/DOCX/XLSX/PPTX.
 
 <p align="center">
